@@ -15,7 +15,9 @@ public class CreateUserRequest {
 
   private final String name;
   private final String email;
+  @PasswordConstraint
   private final String password;
+  @AgeConstraint
   private final int age;
 
 }

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.validation.Valid;
+
 
 /**
  * @author Aleksei Scrobot
@@ -19,7 +21,7 @@ public class ValidatorController {
   private final ValidationService validationService;
   
   @PostMapping("api/user")
-  public User createUser(@RequestBody CreateUserRequest request) {
+  public User createUser(@Valid @RequestBody CreateUserRequest request) {
       return validationService.create(
           request.getName(),
           request.getEmail(),

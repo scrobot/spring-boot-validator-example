@@ -1,5 +1,6 @@
 package com.scrobot.validatorexample.config;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @NoArgsConstructor
 @Getter
 @Setter
+@Data
 public class ValidationConfiguration {
 
   private String password;

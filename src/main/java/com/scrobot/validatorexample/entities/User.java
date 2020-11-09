@@ -10,6 +10,7 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Aleksei Scrobot
@@ -24,10 +25,6 @@ public class User {
   private long id;
   private String name;
   private String email;
-
-  @PasswordConstraint(message = "")
   private String password;
-
-  @AgeConstraint
   private int age;
 }
