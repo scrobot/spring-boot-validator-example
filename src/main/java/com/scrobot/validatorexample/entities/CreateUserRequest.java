@@ -1,6 +1,7 @@
 package com.scrobot.validatorexample.entities;
 
 import com.scrobot.validatorexample.validators.constraits.AgeConstraint;
+import com.scrobot.validatorexample.validators.constraits.LengthConstraint;
 import com.scrobot.validatorexample.validators.constraits.PasswordConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,9 +16,12 @@ public class CreateUserRequest {
 
   private final String name;
   private final String email;
-  @PasswordConstraint
+
+  @PasswordConstraint(message = "{user.password.regexp}")
+  @LengthConstraint(message = "{user.password.size}")
   private final String password;
-  @AgeConstraint
+
+  @AgeConstraint(message = "{user.age}")
   private final int age;
 
 }

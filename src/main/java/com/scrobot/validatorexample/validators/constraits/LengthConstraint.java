@@ -4,6 +4,7 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import com.scrobot.validatorexample.validators.AgeValidator;
+import com.scrobot.validatorexample.validators.LengthValidator;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -16,9 +17,9 @@ import javax.validation.Payload;
  */
 @Target({ FIELD })
 @Retention(RUNTIME)
-@Constraint(validatedBy = AgeValidator.class)
+@Constraint(validatedBy = LengthValidator.class)
 @Documented
-public @interface AgeConstraint {
+public @interface LengthConstraint {
 
   String message() default "{validation.defaultMessage}";
 

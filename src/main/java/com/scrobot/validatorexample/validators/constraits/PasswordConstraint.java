@@ -20,7 +20,7 @@ import javax.validation.Payload;
 @Documented
 public @interface PasswordConstraint {
 
-  String message() default "invalid password";
+  String message() default "{validation.defaultMessage}";
 
   Class<?>[] groups() default { };
 
